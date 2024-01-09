@@ -157,6 +157,30 @@ audio {
   animation: marquee 10s linear infinite;
 }
 
+form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.dropdownmenue {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 14px;
+  color: #333;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: center;
+}
+
+.dropdownmenue:focus {
+  outline: none;
+}
+
+
 /*Адаптация под мобильное устройство*/
 @media (max-width: 600px) {
   .player {
@@ -211,11 +235,17 @@ audio {
 
   .player-options {
     padding-bottom: 20px;
+    margin: 0 auto;
   }
 
   .btn {
     padding: 15px 30px;
     font-size: 18px;
+  }
+
+  .dropdownmenue {
+    padding: 10px;
+    font-size: 14px;
   }
 }
 
@@ -258,5 +288,10 @@ audio {
   .btn {
     padding: 10px 20px;
     font-size: 16px;
+  }
+
+  .dropdownmenue {
+    padding: 10px;
+    font-size: 18px;
   }
 }
