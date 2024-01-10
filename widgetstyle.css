@@ -42,14 +42,7 @@ body {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  margin-right: 20px;
-}
-
-.small-track-img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  margin-right: 20px;
+  margin: 0 auto;
 }
 
 .dj-info {
@@ -58,10 +51,11 @@ body {
   flex-wrap: wrap;
 }
 
-.dj-name {
-  margin-bottom: 15px;
+.info-player-options {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  flex-grow: 1;
+  margin: 10px 0;
 }
 
 .info {
@@ -72,34 +66,32 @@ body {
   justify-content: space-around;
 }
 
-.track-info {
+.dj-name {
+  margin-bottom: 15px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: flex;
   justify-content: center;
+  width: 80%;
+  padding: 10px 20px;
+  background-color: #982a75;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  text-transform: uppercase;
 }
 
-/* .info, .track {
-  flex-grow: 1;
-} */
-
-.artist {
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.track {
-  font-size: 12px;
+.btn:hover {
+  background-color: #c3d5f7;
 }
 
 .player-options {
-  width: 30%;
-}
-
-audio {
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  width: 100%;
+  width: 60%;
 }
 
 .menu {
@@ -125,37 +117,42 @@ audio {
   cursor: pointer;
 }
 
-.btn {
-  width: 80%;
-  padding: 10px 20px;
-  background-color: #982a75;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.5s ease;
-  text-transform: uppercase;
+.track-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn:hover {
-  background-color: #c3d5f7;
+.artist {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.track {
+  font-size: 14px;
+}
+
+.player-options {
+  width: 60%;
+}
+
+.track {
+  width: 100%;
 }
 
 .dj-name, .artist, .track {
   word-wrap: break-word;
 }
 
-@keyframes marquee {
-  0% { text-indent: 100%; }
-  100% { text-indent: -100%; }
+.small-track-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin: 0 20px;
 }
 
-.dj-name, .artist, .track {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  animation: marquee 10s linear infinite;
-}
+
+/*Select*/
 
 form {
   display: flex;
@@ -180,12 +177,32 @@ form {
   outline: none;
 }
 
+audio {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
+}
 
-/*Адаптация под мобильное устройство*/
+/*Animation*/
+@keyframes marquee {
+  0% { text-indent: 100%; }
+  100% { text-indent: -100%; }
+}
+
+.dj-name, .artist, .track {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  animation: marquee 15s linear infinite;
+}
+
+/*Adaptation for mobile*/
 @media (max-width: 600px) {
   .player {
     width: 100%;
     margin: 20px;
+    padding: 10px;
   }
 
   .player-container {
@@ -199,6 +216,10 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .info-player-options {
+    margin: 10px 0;
   }
 
   .dj-img {
@@ -216,21 +237,20 @@ form {
   }
 
   .info {
-    margin: 10px 0;
     display: flex;
     justify-content: space-around;
   }
 
   .artist {
-    font-size: 16px;
+    font-size: 18px;
   }
   
   .track {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .player-options, audio {
-    width: 80%;
+    width: 100%;
   }
 
   .player-options {
@@ -239,17 +259,19 @@ form {
   }
 
   .btn {
-    padding: 15px 30px;
     font-size: 18px;
+  }
+
+  form {
+    margin-bottom: 5px;
   }
 
   .dropdownmenue {
     padding: 10px;
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
-/*Адаптация под очень узкие экраны телефонов*/
 @media (max-width: 400px) {
   .player {
     margin: 10px;
@@ -262,6 +284,7 @@ form {
   .dj-img {
     width: 150px;
     height: 150px;
+    margin-bottom: 5px;
   }
 
   .small-track-img {
@@ -274,20 +297,24 @@ form {
   }
 
   .artist {
-    font-size: 14px;
+    font-size: 18px;
   }
   
   .track {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .player-options, audio {
-    width: 90%;
+    width: 100%;
   }
 
   .btn {
     padding: 10px 20px;
     font-size: 16px;
+  }
+
+  form {
+    margin-bottom: 5px;
   }
 
   .dropdownmenue {
